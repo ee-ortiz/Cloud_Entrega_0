@@ -122,7 +122,8 @@ function Home(props) {
               </tr>
             </thead>
             <tbody>
-              {eventos?.map((evento) => (
+              {/* mapear los eventos ordenados por fecha de inicio */}
+              {eventos?.sort((a, b) => a.fecha_inicio > b.fecha_inicio ? 1 : -1).map((evento) => (
                 <tr key={evento.id}>
                   <td>{evento.nombre}</td>
                   <td>{evento.fecha_inicio}</td>
